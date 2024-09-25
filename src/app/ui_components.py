@@ -181,7 +181,7 @@ def render_ui_components(mode: str) -> Dict[str, Any]:
 
 
 def show_results(images: list) -> None:
-    st.header("## 生成結果")
+    st.header("生成結果")
     if len(images) == 1:
         st.image(images[0], caption="生成された画像", use_column_width=True)
     else:
