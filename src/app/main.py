@@ -17,13 +17,17 @@ def main() -> None:
     negative_prompt = "bad quality, low res, noise"
     mask_prompt = "A cute brown puppy"
     seed = 17  # removeは7が良い．
-    num_image = 5
+    num_image = 1
 
     img_generator = ImageGenerator(region=region)
     input_image = utils.read_image_as_base64(input_image_path)
     input_images = [input_image]
     mask_image = utils.read_image_as_base64(mask_image_path)
 
+    payload = img_generator.make_text_to_image_payload(
+        prompt=prompt,
+        negative_prompt=negative_prompt,
+    )
     # payload = img_generator.make_outpaint_payload(
     #     prompt=prompt,
     #     negative_prompt=negative_prompt,
@@ -44,7 +48,7 @@ def main() -> None:
     #     colors=["#FFA500", "#87CEEB"],
     #     reference_image=input_image,
     # )
-    payload = img_generator.make_background_removal_payload(input_image=input_image)
+    # payload = img_generator.make_background_removal_payload(input_image=input_image)
     response = img_generator.generate_image(
         payload=payload, model_id=model_id, seed=seed, num_image=num_image
     )

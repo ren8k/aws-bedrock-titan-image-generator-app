@@ -18,8 +18,22 @@ class ImageGenerator:
     def make_payload(self, mode: str, **kwargs: Any) -> dict:
         if mode == "TEXT_IMAGE":
             return self.make_text_to_image_payload(**kwargs)
+        elif mode == "IMAGE_CONDITIONING":
+            return self.make_image_conditioning_payload(**kwargs)
+        elif mode == "INPAINTING":
+            return self.make_inpaint_payload(**kwargs)
+        elif mode == "OUTPAINTING":
+            return self.make_outpaint_payload(**kwargs)
+        elif mode == "REMOVAL":
+            return self.make_object_removal_payload(**kwargs)
+        elif mode == "IMAGE_VARIATION":
+            return self.make_variation_payload(**kwargs)
+        elif mode == "COLOR_GUIDED_GENERATION":
+            return self.make_color_guide_payload(**kwargs)
+        elif mode == "BACKGROUND_REMOVAL":
+            return self.make_background_removal_payload(**kwargs)
         else:
-            raise ValueError("mode is not supported")
+            raise ValueError(f"Unsupported mode: {mode}")
 
     def make_text_to_image_payload(
         self,
@@ -148,7 +162,7 @@ class ImageGenerator:
         self,
         prompt: str,
         negative_prompt: str,
-        colors: list,  # ["#FFFFFF", "#000000"]
+        colors: list,
         reference_image: Optional[str] = None,
     ) -> dict:
         if reference_image:
@@ -187,7 +201,7 @@ class ImageGenerator:
         payload: dict,
         model_id: str,
         num_image: int = 2,
-        cfg_scale: float = 10.0,
+        cfg_scale: float = 8.0,
         seed: int = 0,
     ) -> dict:
         body = json.dumps(
@@ -211,13 +225,19 @@ class ImageGenerator:
         )
 
     def extract_images_from(self, response: dict) -> list:
-        response_body = json.loads(response.get("body").read())
+        response_body = self._get_body(response)
         self._validate_response(response_body)
         images = [
             Image.open(io.BytesIO(base64.b64decode(base64_image)))
             for base64_image in response_body.get("images")
         ]
         return images
+
+    def _get_body(self, response: dict) -> dict:
+        body = response.get("body")
+        if body is None:
+            raise ValueError("Response body is None")
+        return json.loads(body.read())
 
     def _validate_response(self, response_body: dict) -> None:
         finish_reason = response_body.get("error")

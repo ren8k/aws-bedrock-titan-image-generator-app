@@ -2,6 +2,7 @@ import base64
 import datetime
 import os
 from pathlib import Path
+from typing import Union
 
 import matplotlib.pyplot as plt
 import pytz
@@ -14,15 +15,21 @@ def read_image_as_base64(image_path: str) -> str:
     return base64.b64encode(image_bytes).decode("utf-8")
 
 
+def bytes_to_base64(file_bytes: Union[bytes, bytearray]) -> str:
+    return base64.b64encode(file_bytes).decode("utf-8")
+
+
 def get_datetime() -> str:
     tokyo_tz = pytz.timezone("Asia/Tokyo")
     return datetime.datetime.now(tokyo_tz).strftime("%Y%m%d_%H%M%S")
 
 
-def save_images(save_dir: str, images: list[Image.Image], seed: int) -> None:
+def save_images(
+    save_dir: str, images: list[Image.Image], seed: int, mode: str = None
+) -> None:
     datetime = get_datetime()
     Path(save_dir).mkdir(parents=True, exist_ok=True)
-    save_img_name = os.path.join(save_dir, f"output_{datetime}_{seed=}")
+    save_img_name = os.path.join(save_dir, f"output_{datetime}_{seed=}_{mode}")
     for i, image in enumerate(images):
         image.save(f"{save_img_name}_{i}.png")
 
