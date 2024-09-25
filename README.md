@@ -1,0 +1,1 @@
+# aws-bedrock-titan-image-verification
