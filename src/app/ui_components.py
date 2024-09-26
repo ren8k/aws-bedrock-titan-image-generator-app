@@ -74,7 +74,7 @@ def get_mask_prompt() -> str:
 
 
 def get_outpainting_mode() -> str:
-    return st.selectbox("アウトペインティングモード:", ["PRECISE", "DEFAULT"])
+    return st.selectbox("アウトペインティングモード:", ["DEFAULT", "PRECISE"])
 
 
 def get_similarity_strength() -> float:
