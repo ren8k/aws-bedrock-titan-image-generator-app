@@ -105,6 +105,7 @@ def select_color_palette(no_of_colors: int = 5) -> List[str]:
     return colors
 
 
+# HACK: 機能毎にUIコンポーネントを分割した方が良いかもしれない
 def render_ui_components(mode: str) -> Dict[str, Any]:
     payload_params: Dict[str, Any] = {}
 
