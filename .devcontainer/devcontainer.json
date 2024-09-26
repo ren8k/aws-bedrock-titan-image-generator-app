@@ -9,7 +9,7 @@
 		"type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws",
 	],
 	"initializeCommand": "bash ${localWorkspaceFolder}/.devcontainer/init.sh",
-	// "postCreateCommand": "bash /app/amzn-titan/.devcontainer/post.sh",
+	"postCreateCommand": "bash /app/amzn-titan/.devcontainer/post.sh",
 	"runArgs": [
 		"--name",
 		"amzn-titan", // set your pj name
