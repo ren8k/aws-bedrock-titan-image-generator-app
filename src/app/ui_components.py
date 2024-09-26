@@ -51,7 +51,7 @@ def get_negative_prompt() -> str:
 
 
 def upload_image(
-    label: str = "入力画像をアップロードしてください",
+    label: str = "入力画像をアップロードしてください:",
 ) -> Optional[UploadedFile]:
     return st.file_uploader(label, type=["png", "jpg", "jpeg"])
 
@@ -93,7 +93,7 @@ def get_no_of_colors() -> int:
 
 
 def select_color_palette(no_of_colors: int = 5) -> List[str]:
-    st.write("カラーパレットを選択")
+    st.write("カラーパレットを選択:")
     colors = []
     cols = st.columns(no_of_colors)
 
@@ -132,7 +132,7 @@ def render_ui_components(mode: str) -> Dict[str, Any]:
             display_uploaded_image(input_image)
             image_bytes = input_image.getvalue()
             payload_params["input_image"] = utils.bytes_to_base64(image_bytes)
-        mask_image = upload_image("マスク画像をアップロードしてください")
+        mask_image = upload_image("マスク画像をアップロードしてください:")
         if mask_image:
             display_uploaded_image(mask_image)
             mask_bytes = mask_image.getvalue()
@@ -160,7 +160,7 @@ def render_ui_components(mode: str) -> Dict[str, Any]:
         no_of_colors = get_no_of_colors()
         payload_params["colors"] = select_color_palette(no_of_colors)
         reference_image = upload_image(
-            "参照画像をアップロードしてください (オプション)"
+            "参照画像をアップロードしてください (オプション):"
         )
         if reference_image:
             display_uploaded_image(reference_image)
