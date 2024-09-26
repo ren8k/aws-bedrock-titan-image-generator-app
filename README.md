@@ -2,13 +2,13 @@
 
 本リポジトリでは，以下に示す Amazon Titan Image Generator v2 の全機能を利用可能な streamlit アプリケーションと，SAM2 によるセグメンテーション実行用の Jupyter Notebook を公開している．
 
-- Amazon Titan Image Generator v2 の全機能を利用するためのアプリケーションの実装
-- [Segment Anything Model 2 (SAM 2)](https://github.com/facebookresearch/segment-anything-2)を利用したセグメンテーションマスク生成用の Jupyter Notebook
+- Amazon Titan Image Generator v2 の全機能を利用するための[アプリケーションの実装](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/src/app/app.py)
+- [Segment Anything Model 2 (SAM 2)](https://github.com/facebookresearch/segment-anything-2)を利用したセグメンテーションマスク生成用の [Jupyter Notebook](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/notebook/automatic_mask_generator_example.ipynb)
 
 > [!NOTE]
 > Amazon Titan Image Generator v2 の解説記事を Qiita に投稿しております．
 > 是非そちらもご覧下さい！
-> <br> [Amazon Titan Image Generator v2 の全機能を徹底検証：機能解説と実践ガイド](https://qiita.com/ren8k)
+> <br> [Amazon Titan Image Generator v2 の全機能を徹底検証：機能解説と実践ガイド](https://qiita.com/ren8k/items/94b5d9bdc513acde371e)
 
 <img src="./assets/demo.gif">
 
