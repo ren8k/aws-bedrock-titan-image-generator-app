@@ -1,20 +1,36 @@
 # aws-bedrock-titan-image-verification
 
 > [!NOTE]
-> 本アプリおよび，Converse API や Tool use の解説記事を Qiita に投稿しております．
+> 本アプリおよび，Amazon Titan Image Generator v2 の解説記事を Qiita に投稿しております．
 > 是非そちらもご覧下さい！
-> <br> [Amazon Bedrock Converse API と Tool use を知識ゼロから学び，発展的なチャットアプリを実装する](https://qiita.com/ren8k/items/64c4a3de56b886942251)
+> <br> [Amazon Titan Image Generator v2 の全機能を徹底検証：機能解説と実践ガイド](https://qiita.com/ren8k)
 
 <img src="./assets/demo.gif">
 
 ## 検証環境
+
+以下の環境で動作確認済みである．AWS を利用する場合，G5 インスタンスなどを推奨する．
 
 - OS: Ubuntu 22.04.4 LTS
 - CPU: Intel(R) Core(TM) i9-12900K
 - RAM: 64GB
 - GPU: NVIDIA GeForce RTX 3090
 
+> [!NOTE]
+> アプリケーションのみの実行には，GPU は不要である．SAM2 を利用する場合，上記のような GPU リソースが必要となる．
+
 ## 環境構築
 
-- README記載の通り，以下のコマンドでコンテナを自動構築可能．
-AWSだとG5インスタンスが良いかもしれない
+VSCode の Dev Container を利用する．
+
+> [!NOTE]
+> アプリケーションのみの実行には，Dev Container は不要である．SAM2 を利用する場合，pytorch，nvidia driver，cuda などの環境構築が必要となるため，Dev Container の利用を推奨する．
+
+## アプリケーションの実行方法
+
+```bash
+cd src/app
+python run_app.py
+```
+
+## SAM2 の実行方法
