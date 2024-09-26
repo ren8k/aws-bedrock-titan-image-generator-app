@@ -43,7 +43,7 @@ VSCode の Dev Container を利用する．
 
 ```bash
 cd src/app
-python run_app.py
+bash run_app.sh
 ```
 
 ## SAM2 の実行方法
