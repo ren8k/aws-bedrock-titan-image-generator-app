@@ -50,4 +50,4 @@ python run_app.py
 
 - Dev Conatiner でコンテナを起動しログインする．
   - ctrl + shift + p でコマンドパレットを開き，`Dev-Containers: Rebuild Container` を選択する．
-- `[/app/amzn-titan/notebook/automatic_mask_generator_example.ipynb](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/notebook/automatic_mask_generator_example.ipynb)`を実行する．
+- [`./notebook/automatic_mask_generator_example.ipynb`](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/notebook/automatic_mask_generator_example.ipynb)を実行する．
