@@ -8,8 +8,7 @@
 > [!NOTE]
 > Amazon Titan Image Generator v2 の解説記事を Qiita に投稿しております．
 > 是非そちらもご覧下さい！
-> <br> [Amazon Titan Image Generator v2 の全機能を徹底検証：機能解説と実践ガイド](https://qiita.com/ren8k/items/94b5d9bdc513acde371e)
-> <br> [上記記事で利用した実装](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/notebook/verify_all_features_of_titan_image_generator_v2.ipynb)
+> <br> [Amazon Titan Image Generator v2 の全機能を徹底検証：機能解説と実践ガイド](https://qiita.com/ren8k/items/94b5d9bdc513acde371e) > <br> [上記記事で利用した実装](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/notebook/verify_all_features_of_titan_image_generator_v2.ipynb)
 
 <img src="./assets/demo.gif">
 
@@ -37,8 +36,12 @@
 
 VSCode の Dev Container を利用する．
 
-> [!IMPORTANT]
-> アプリケーションのみを実行する場合，実行環境に基本的なライブラリ (streamlit, boto3, Pillow など) や Python (3.11 以上が望ましい) が install されている場合，Dev Container は不要である．SAM2 を利用する場合，pytorch，nvidia driver，cuda などの環境構築が必要となるため，Dev Container の利用を推奨する．
+> [!IMPORTANT] > **GPU の利用を必須**としている．アプリケーションのみを実行する場合，実行環境に以下が install されていれば，Dev Container は不要である．
+>
+> - 基本的なライブラリ (streamlit, boto3, Pillow など)
+> - Python (3.11 以上が望ましい)
+>
+>   SAM2 を利用する場合，PyTorch，nvidia driver，cuda などの環境構築が必要となるため，Dev Container の利用を推奨する．
 
 ## Amazon Titan Image Generator v2 のアプリケーション実行方法
 
