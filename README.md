@@ -36,13 +36,12 @@
 
 VSCode の Dev Container を利用する．
 
-> [!IMPORTANT]
-> **GPU の利用を必須**としている．アプリケーションのみを実行する場合，実行環境に以下が install されていれば，Dev Container は不要である．
+> [!IMPORTANT] > **GPU の利用を必須**としている．アプリケーションのみを実行する場合，実行環境に以下が install されていれば，Dev Container は不要である．
 >
 > - 基本的なライブラリ (streamlit, boto3, Pillow など)
 > - Python (3.11 以上が望ましい)
 >
->   SAM2 を利用する場合，PyTorch，nvidia driver，cuda などの環境構築が必要となるため，Dev Container の利用を推奨する．
+> SAM2 を利用する場合，PyTorch，nvidia driver，cuda などの環境構築が必要となるため，Dev Container の利用を推奨する．
 
 ## Amazon Titan Image Generator v2 のアプリケーション実行方法
 
