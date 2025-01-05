@@ -1,5 +1,8 @@
 # Amazon Titan Image Generator v2 Application
 
+> [!NOTE]
+> Amazon Nova Canvas に対応しました！
+
 本リポジトリでは，以下に示す Amazon Titan Image Generator v2 の全機能を利用可能な streamlit アプリケーションと，SAM2 によるセグメンテーション実行用の Jupyter Notebook を公開している．
 
 - Amazon Titan Image Generator v2 の全機能を利用するための[アプリケーションの実装](https://github.com/ren8k/aws-bedrock-titan-image-generator-app/blob/main/src/app/app.py)
