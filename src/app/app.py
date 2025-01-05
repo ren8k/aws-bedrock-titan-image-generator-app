@@ -6,7 +6,7 @@ from image_generator import ImageGenerator
 
 
 def main() -> None:
-    st.title("Amazon Titan Image Generator v2 App")
+    st.title("Amazon Nova Canvas App")
     img_generator = ImageGenerator(region=config.AWS_REGION)
     mode = ui.get_generation_mode()
     st.header(f"生成モード: {mode}")
