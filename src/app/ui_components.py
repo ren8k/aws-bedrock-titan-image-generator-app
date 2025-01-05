@@ -29,13 +29,13 @@ def get_no_of_images() -> int:
 
 def get_seed() -> int:
     return st.sidebar.number_input(
-        "シード値を入力してください:", min_value=0, max_value=2147483646
+        "シード値を入力してください:", min_value=0, max_value=2147483646, value=42
     )
 
 
 def get_cfg_scale() -> float:
     return st.sidebar.slider(
-        "スケールを入力してください:", min_value=1.1, max_value=10.0, value=8.0
+        "スケールを入力してください:", min_value=1.1, max_value=10.0, value=6.5
     )
 
 
