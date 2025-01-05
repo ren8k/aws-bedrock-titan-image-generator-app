@@ -5,6 +5,7 @@ from typing import Any, Optional
 
 import boto3
 from botocore.client import BaseClient
+from botocore.config import Config
 from PIL import Image
 
 
@@ -13,7 +14,11 @@ class ImageGenerator:
         self.client = self._init_bedrock_client(region)
 
     def _init_bedrock_client(self, region: str) -> BaseClient:
-        return boto3.client(service_name="bedrock-runtime", region_name=region)
+        return boto3.client(
+            service_name="bedrock-runtime",
+            config=Config(read_timeout=300),
+            region_name=region,
+        )
 
     def make_payload(self, mode: str, **kwargs: Any) -> dict:
         if mode == "TEXT_IMAGE":
